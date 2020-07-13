@@ -54,7 +54,6 @@
           camera.attachControl(canvas, true);
 
           // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
-
           var light = new BABYLON.HemisphericLight(
             "light",
             new BABYLON.Vector3(0, 1, 0),
@@ -66,7 +65,7 @@
 
           // Load the sound and play it automatically once ready
           var music = new BABYLON.Sound(
-            "Violons",
+            "",
             "sounds/violons11.wav",
             scene,
             null,
