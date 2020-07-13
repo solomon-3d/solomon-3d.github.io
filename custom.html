@@ -53,6 +53,16 @@
           // This attaches the camera to the canvas
           camera.attachControl(canvas, true);
 
+          //Parameters: name, alpha, beta, radius, target, scene, compensateDistortion, vrCameraMetrics
+          var camera = new BABYLON.VRDeviceOrientationArcRotateCamera(
+            "Camera",
+            Math.PI / 2,
+            Math.PI / 4,
+            25,
+            new BABYLON.Vector3(0, 0, 0),
+            scene
+          );
+
           // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
           var light = new BABYLON.HemisphericLight(
             "light",
@@ -62,6 +72,15 @@
 
           // Default intensity is 1. Let's dim the light a small amount
           light.intensity = 0.7;
+
+          // Load the sound and play it automatically once ready
+          var music = new BABYLON.Sound(
+            "Violons",
+            "sounds/violons11.wav",
+            scene,
+            null,
+            { loop: true, autoplay: true }
+          );
 
           // Skybox
           var skybox = BABYLON.Mesh.CreateBox("skyBox", 5000.0, scene);
