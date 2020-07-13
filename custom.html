@@ -64,13 +64,10 @@
           light.intensity = 0.7;
 
           // Load the sound and play it automatically once ready
-          var music = new BABYLON.Sound(
-            "",
-            "sounds/violons11.wav",
-            scene,
-            null,
-            { loop: true, autoplay: true }
-          );
+          var music = new BABYLON.Sound("", "ambience.wav", scene, null, {
+            loop: true,
+            autoplay: true,
+          });
 
           // Skybox
           var skybox = BABYLON.Mesh.CreateBox("skyBox", 5000.0, scene);
